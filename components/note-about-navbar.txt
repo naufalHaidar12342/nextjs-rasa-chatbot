@@ -1,0 +1,2 @@
+if the page title is not chat-screen, then hide the back button.
+that means, when user entered chat-screen, show the back button on navbar
