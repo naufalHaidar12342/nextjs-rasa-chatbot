@@ -1,6 +1,6 @@
+import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
-import BlurLayer from "./BlurLayer";
 import Footer from "./Footer";
 export default function Layout({ children, title = "" }) {
 	return (
@@ -17,7 +17,18 @@ export default function Layout({ children, title = "" }) {
 					}}
 				>
 					{children}
-					<Footer />
+					<motion.div
+						className="flex flex-col items-center"
+						animate={{ opacity: 1, scale: 1 }}
+						initial={{ opacity: 0, scale: 0.5 }}
+						transition={{
+							duration: 0.8,
+							delay: 0.5,
+							ease: [0, 0.71, 0.2, 1.01],
+						}}
+					>
+						<Footer />
+					</motion.div>
 				</div>
 
 				<Image
