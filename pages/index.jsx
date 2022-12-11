@@ -12,8 +12,12 @@ export default function Home() {
 				initial={{ opacity: 0, scale: 0.5 }}
 				transition={{ duration: 0.8, delay: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
 			>
-				<div className="text-[50px] font-medium">Learning Chatbot</div>
-				<div className="text-[90px] font-bold">SMA LOYOLA</div>
+				<div className="text-[50px] font-medium" style={{ fontWeight: 500 }}>
+					Learning Chatbot
+				</div>
+				<div className="text-[90px] font-bold" style={{ fontWeight: 700 }}>
+					SMA LOYOLA
+				</div>
 				<div
 					className="flex justify-center items-center space-x-11 space-y-3"
 					title="Button organizer"
@@ -31,7 +35,7 @@ export default function Home() {
 					</div>
 					<motion.div
 						whileTap={{ scale: 0.8 }}
-						transition={{ type: "spring", duration: 1, bounce: 0.7 }}
+						transition={{ type: "spring", duration: 0.4, bounce: 0.7 }}
 					>
 						<Link
 							href={"/choose-topic"}
