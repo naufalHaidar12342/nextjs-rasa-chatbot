@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 
-export default function Help() {
+export default function ReportProblem() {
 	return (
 		<Layout>
 			<div></div>

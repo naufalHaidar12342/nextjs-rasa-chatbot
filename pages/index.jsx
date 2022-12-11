@@ -22,7 +22,8 @@ export default function Home() {
 					className="flex justify-center items-center space-x-11 space-y-3"
 					title="Button organizer"
 				>
-					<div
+					<Link
+						href={"/help"}
 						title="Help button"
 						className="rounded-full w-48 h-48 flex flex-col justify-center items-center"
 						style={{
@@ -32,7 +33,7 @@ export default function Home() {
 					>
 						<MdQuestionAnswer className="text-7xl" />
 						<div className="text-3xl">Help</div>
-					</div>
+					</Link>
 					<motion.div
 						whileTap={{ scale: 0.8 }}
 						transition={{
@@ -52,7 +53,8 @@ export default function Home() {
 							<div className="text-7xl">Start!</div>
 						</Link>
 					</motion.div>
-					<div
+					<Link
+						href={"/report-problem"}
 						title="Report problem button"
 						className="rounded-full w-48 h-48 flex flex-col justify-center items-center"
 						style={{
@@ -62,7 +64,7 @@ export default function Home() {
 					>
 						<MdReportProblem className="text-7xl" />
 						<div className="text-3xl">Report </div>
-					</div>
+					</Link>
 				</div>
 			</motion.div>
 		</Layout>
