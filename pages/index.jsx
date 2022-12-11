@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import { MdQuestionAnswer } from "react-icons/md";
 import { MdReportProblem } from "react-icons/md";
 import { motion } from "framer-motion";
+import Link from "next/link";
 export default function Home() {
 	return (
 		<Layout title="Home">
@@ -28,16 +29,22 @@ export default function Home() {
 						<MdQuestionAnswer className="text-7xl" />
 						<div className="text-3xl">Help</div>
 					</div>
-					<div
-						title="Start button"
-						className="rounded-full w-[300px] h-[300px] flex flex-col justify-center items-center"
-						style={{
-							backdropFilter: "saturate(100%) blur(20px)",
-							background: "rgba(255, 255, 255, 0.25)",
-						}}
+					<motion.div
+						whileTap={{ scale: 0.8 }}
+						transition={{ type: "spring", duration: 1, bounce: 0.7 }}
 					>
-						<div className="text-7xl">Start</div>
-					</div>
+						<Link
+							href={"/choose-topic"}
+							title="Start button"
+							className="rounded-full w-[300px] h-[300px] flex flex-col justify-center items-center"
+							style={{
+								backdropFilter: "saturate(100%) blur(20px)",
+								background: "rgba(255, 255, 255, 0.25)",
+							}}
+						>
+							<div className="text-7xl">Start!</div>
+						</Link>
+					</motion.div>
 					<div
 						title="Report problem button"
 						className="rounded-full w-48 h-48 flex flex-col justify-center items-center"
