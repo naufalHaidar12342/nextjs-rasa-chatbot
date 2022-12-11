@@ -35,7 +35,11 @@ export default function Home() {
 					</div>
 					<motion.div
 						whileTap={{ scale: 0.8 }}
-						transition={{ type: "spring", duration: 0.4, bounce: 0.7 }}
+						transition={{
+							type: "spring",
+							duration: 0.8,
+							bounce: 0.7,
+						}}
 					>
 						<Link
 							href={"/choose-topic"}
