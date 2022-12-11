@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import { MdQuestionAnswer } from "react-icons/md";
 import { MdReportProblem } from "react-icons/md";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 export default function Home() {
 	return (
@@ -22,18 +22,23 @@ export default function Home() {
 					className="flex justify-center items-center space-x-11 space-y-3"
 					title="Button organizer"
 				>
-					<Link
-						href={"/help"}
-						title="Help button"
-						className="rounded-full w-48 h-48 flex flex-col justify-center items-center"
-						style={{
-							backdropFilter: "saturate(100%) blur(20px)",
-							background: "rgba(255, 255, 255, 0.25)",
-						}}
+					<motion.div
+						whileTap={{ scale: 0.7 }}
+						transition={{ type: "spring", bounce: 0.7 }}
 					>
-						<MdQuestionAnswer className="text-7xl" />
-						<div className="text-3xl">Help</div>
-					</Link>
+						<Link
+							href={"/help"}
+							title="Help button"
+							className="rounded-full w-48 h-48 flex flex-col justify-center items-center"
+							style={{
+								backdropFilter: "saturate(100%) blur(20px)",
+								background: "rgba(255, 255, 255, 0.25)",
+							}}
+						>
+							<MdQuestionAnswer className="text-7xl" />
+							<div className="text-3xl">Help</div>
+						</Link>
+					</motion.div>
 					<motion.div
 						whileTap={{ scale: 0.8 }}
 						transition={{
@@ -53,18 +58,26 @@ export default function Home() {
 							<div className="text-7xl">Start!</div>
 						</Link>
 					</motion.div>
-					<Link
-						href={"/report-problem"}
-						title="Report problem button"
-						className="rounded-full w-48 h-48 flex flex-col justify-center items-center"
-						style={{
-							backdropFilter: "saturate(100%) blur(20px)",
-							background: "rgba(255, 255, 255, 0.25)",
+					<motion.div
+						whileTap={{ scale: 0.7 }}
+						transition={{
+							type: "spring",
+							bounce: 0.7,
 						}}
 					>
-						<MdReportProblem className="text-7xl" />
-						<div className="text-3xl">Report </div>
-					</Link>
+						<Link
+							href={"/report-problem"}
+							title="Report problem button"
+							className="rounded-full w-48 h-48 flex flex-col justify-center items-center"
+							style={{
+								backdropFilter: "saturate(100%) blur(20px)",
+								background: "rgba(255, 255, 255, 0.25)",
+							}}
+						>
+							<MdReportProblem className="text-7xl" />
+							<div className="text-3xl">Report </div>
+						</Link>
+					</motion.div>
 				</div>
 			</motion.div>
 		</Layout>
