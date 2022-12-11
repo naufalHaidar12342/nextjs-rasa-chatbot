@@ -37,7 +37,6 @@ export default function Home() {
 						whileTap={{ scale: 0.8 }}
 						transition={{
 							type: "spring",
-							duration: 0.8,
 							bounce: 0.7,
 						}}
 					>
