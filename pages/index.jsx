@@ -24,6 +24,7 @@ export default function Home() {
 				>
 					<motion.div
 						whileTap={{ scale: 0.7 }}
+						whileHover={{ scale: 0.9 }}
 						transition={{ type: "spring", bounce: 0.7 }}
 					>
 						<Link
@@ -41,10 +42,10 @@ export default function Home() {
 					</motion.div>
 					<motion.div
 						whileTap={{ scale: 0.8 }}
+						whileHover={{ scale: 0.9 }}
 						transition={{
 							type: "spring",
-							stiffness: 400,
-							damping: 17,
+							bounce: 0.7,
 						}}
 					>
 						<Link
@@ -57,6 +58,7 @@ export default function Home() {
 					</motion.div>
 					<motion.div
 						whileTap={{ scale: 0.7 }}
+						whileHover={{ scale: 0.9 }}
 						transition={{
 							type: "spring",
 							bounce: 0.7,
