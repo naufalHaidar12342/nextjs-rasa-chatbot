@@ -1,0 +1,3 @@
+currently, all topic are mapped from .json
+
+In future: all topic is fetched from RASA Framework API
