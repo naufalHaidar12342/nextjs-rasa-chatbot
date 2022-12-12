@@ -43,17 +43,14 @@ export default function Home() {
 						whileTap={{ scale: 0.8 }}
 						transition={{
 							type: "spring",
-							bounce: 0.7,
+							stiffness: 400,
+							damping: 17,
 						}}
 					>
 						<Link
 							href={"/choose-topic"}
 							title="Start button"
-							className="rounded-full w-[300px] h-[300px] flex flex-col justify-center items-center"
-							style={{
-								backdropFilter: "saturate(100%) blur(20px)",
-								background: "rgba(255, 255, 255, 0.25)",
-							}}
+							className="rounded-full w-[300px] h-[300px] flex flex-col justify-center items-center bg-darkerYellow"
 						>
 							<div className="text-7xl">Start!</div>
 						</Link>
@@ -63,7 +60,9 @@ export default function Home() {
 						transition={{
 							type: "spring",
 							bounce: 0.7,
+							duration: 5,
 						}}
+						animate={{ transitionDuration: 5 }}
 					>
 						<Link
 							href={"/report-problem"}
