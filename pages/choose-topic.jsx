@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Layout from "../components/Layout";
-
+import TopicsList from "../data/list-of-topics.json";
 export default function ChooseTopic(second) {
 	return (
 		<Layout title="Choose topic">
@@ -28,7 +28,34 @@ export default function ChooseTopic(second) {
 				>
 					Which topic do you want to learn today?
 				</h2>
-				<Link href={""}></Link>
+				<div className="flex flex-col justify-center items-center space-y-6 py-7">
+					{TopicsList.map((topics, index) => (
+						<motion.div
+							whileHover={{ scale: 1.2 }}
+							whileTap={{}}
+							transition={{ type: "spring" }}
+						>
+							<Link
+								href={`${topics.path}`}
+								key={index}
+								className="rounded-2xl w-[700px] h-28 p-5 flex justify-center items-center"
+								style={{
+									background: "rgba(255, 255, 255, 0.55)",
+								}}
+							>
+								<div
+									className="text-6xl"
+									style={{
+										WebkitTextFillColor: "#012363",
+										fontWeight: 500,
+									}}
+								>
+									{topics.topicName}
+								</div>
+							</Link>
+						</motion.div>
+					))}
+				</div>
 			</motion.div>
 		</Layout>
 	);
