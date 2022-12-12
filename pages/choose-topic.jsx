@@ -1,7 +1,8 @@
-import { motion } from "framer-motion";
+import { domAnimation, LazyMotion, m, motion } from "framer-motion";
 import Link from "next/link";
 import Layout from "../components/Layout";
 import TopicsList from "../data/list-of-topics.json";
+
 export default function ChooseTopic(second) {
 	return (
 		<Layout title="Choose topic">
@@ -30,30 +31,32 @@ export default function ChooseTopic(second) {
 				</h2>
 				<div className="flex flex-col justify-center items-center space-y-6 py-7">
 					{TopicsList.map((topics, index) => (
-						<motion.div
-							whileHover={{ scale: 1.2 }}
-							whileTap={{}}
-							transition={{ type: "spring" }}
-						>
-							<Link
-								href={`${topics.path}`}
-								key={index}
-								className="rounded-2xl w-[700px] h-28 p-5 flex justify-center items-center"
-								style={{
-									background: "rgba(255, 255, 255, 0.55)",
-								}}
+						<LazyMotion features={domAnimation}>
+							<m.div
+								whileHover={{ scale: 1.2 }}
+								whileTap={{}}
+								transition={{ type: "spring" }}
 							>
-								<div
-									className="text-6xl"
+								<Link
+									href={`${topics.path}`}
+									key={index}
+									className="rounded-2xl w-[700px] h-28 p-5 flex justify-center items-center"
 									style={{
-										WebkitTextFillColor: "#012363",
-										fontWeight: 500,
+										background: "rgba(255, 255, 255, 0.55)",
 									}}
 								>
-									{topics.topicName}
-								</div>
-							</Link>
-						</motion.div>
+									<div
+										className="text-6xl"
+										style={{
+											WebkitTextFillColor: "#012363",
+											fontWeight: 500,
+										}}
+									>
+										{topics.topicName}
+									</div>
+								</Link>
+							</m.div>
+						</LazyMotion>
 					))}
 				</div>
 			</motion.div>
