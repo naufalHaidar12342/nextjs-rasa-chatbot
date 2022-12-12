@@ -2,7 +2,7 @@ import { domAnimation, LazyMotion, m, motion } from "framer-motion";
 import Link from "next/link";
 import Layout from "../components/Layout";
 import TopicsList from "../data/list-of-topics.json";
-
+import { MdOutlineKeyboardBackspace } from "react-icons/md";
 export default function ChooseTopic(second) {
 	return (
 		<Layout title="Choose topic">
@@ -29,7 +29,7 @@ export default function ChooseTopic(second) {
 				>
 					Which topic do you want to learn today?
 				</h2>
-				<div className="flex flex-col justify-center items-center space-y-6 py-7">
+				<div className="flex flex-col justify-center items-center space-y-5 pt-6">
 					{TopicsList.map((topics, index) => (
 						<LazyMotion features={domAnimation}>
 							<m.div
@@ -58,6 +58,24 @@ export default function ChooseTopic(second) {
 							</m.div>
 						</LazyMotion>
 					))}
+					<LazyMotion features={domAnimation}>
+						<m.div
+							className="pt-5"
+							style={{ fontWeight: 500 }}
+							whileHover={{ scale: 1.2 }}
+							whileTap={{ scale: 0.75 }}
+						>
+							<Link
+								href={"/"}
+								className="rounded-2xl w-[700px] h-20 flex justify-center items-center bg-darkerYellow"
+							>
+								<div className="text-6xl flex justify-center ">
+									<MdOutlineKeyboardBackspace className="mr-3" />
+									<h5>Back to home</h5>
+								</div>
+							</Link>
+						</m.div>
+					</LazyMotion>
 				</div>
 			</motion.div>
 		</Layout>
