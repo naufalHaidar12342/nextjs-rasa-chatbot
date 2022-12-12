@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import { MdQuestionAnswer } from "react-icons/md";
-import { MdReportProblem } from "react-icons/md";
+import { MdReportProblem, MdReport } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 export default function Home() {
@@ -62,7 +62,6 @@ export default function Home() {
 						transition={{
 							type: "spring",
 							bounce: 0.7,
-							duration: 5,
 						}}
 						animate={{ transitionDuration: 5 }}
 					>
@@ -75,7 +74,7 @@ export default function Home() {
 								background: "rgba(255, 255, 255, 0.25)",
 							}}
 						>
-							<MdReportProblem className="text-7xl" />
+							<MdReport className="text-7xl" />
 							<div className="text-3xl">Report </div>
 						</Link>
 					</motion.div>
