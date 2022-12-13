@@ -3,7 +3,7 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 import TopicsList from "../data/list-of-topics.json";
 import { MdOutlineKeyboardBackspace } from "react-icons/md";
-export default function ChooseTopic(second) {
+export default function ChooseTopic() {
 	return (
 		<Layout title="Choose topic">
 			<style jsx>{`
@@ -69,9 +69,9 @@ export default function ChooseTopic(second) {
 								href={"/"}
 								className="rounded-2xl w-[700px] h-20 flex justify-center items-center bg-darkerYellow"
 							>
-								<div className="text-6xl flex justify-center ">
-									<MdOutlineKeyboardBackspace className="mr-3" />
-									<h5>Back to home</h5>
+								<div className="text-5xl flex justify-center ">
+									<MdOutlineKeyboardBackspace className="text-5xl" />
+									<h5 className="px-4">Back to home</h5>
 								</div>
 							</Link>
 						</m.div>
