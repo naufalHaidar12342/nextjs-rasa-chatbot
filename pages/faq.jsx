@@ -2,6 +2,7 @@ import { domAnimation, LazyMotion, m, motion } from "framer-motion";
 import { useState } from "react";
 import Layout from "../components/Layout";
 import ScrollableLayout from "../components/ScrollableLayout";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 export default function FAQ() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,10 +30,16 @@ export default function FAQ() {
             className="text-[50px] font-medium linear-gradient-text"
             style={{ fontWeight: 600 }}
           >
-            Which topic do you want to learn today?
+            Frequently Asked Question
           </h2>
           <div className="flex flex-col justify-center items-center space-y-5 pt-6">
-            <m.div initial={false} animate={isOpen ? "open" : "closed"}>
+            <m.div
+              initial={false}
+              animate={isOpen ? "open" : "closed"}
+              className="flex justify-center items-center rounded-2xl w-[700px] h-28 p-5 bg-white"
+            >
+              <FaPlus className="text-3xl" />
+              <h3 className="px-10 text-3xl"> How to start chatting?</h3>
               <m.div></m.div>
             </m.div>
           </div>
