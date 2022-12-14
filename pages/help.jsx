@@ -26,9 +26,9 @@ export default function Help() {
 					className="text-[50px] font-medium linear-gradient-text"
 					style={{ fontWeight: 600 }}
 				>
-					How to use chatbot
+					What kind of help you need?
 				</h2>
-				<Link href={"/faq"} className="pt-2">
+				<Link href={"/frequently-asked-question"} className="pt-2">
 					<div className="rounded-2xl w-[700px] h-20 flex justify-center items-center bg-darkerYellow">
 						<FaQuestionCircle className="text-4xl" />
 						<h4 className="text-4xl px-4" style={{ fontWeight: 600 }}>
