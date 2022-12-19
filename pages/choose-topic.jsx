@@ -8,7 +8,7 @@ export default function ChooseTopic() {
     <Layout title="Choose topic">
       <style jsx>{`
         .linear-gradient-text {
-          background: linear-gradient(-90deg, #ffffff 20%, #c8940f 59.92%);
+          background: linear-gradient(-90deg, #c8940f 20%, #ffffff 59.92%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
