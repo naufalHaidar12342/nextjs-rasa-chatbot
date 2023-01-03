@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
 import { useEffect, useState } from "react";
 import { MdMic } from "react-icons/md";
+import dummyChat from "../data/dummy-chat";
 const sendData = (ws, data) => {
 	ws.send(
 		JSON.stringify({
@@ -8,7 +9,6 @@ const sendData = (ws, data) => {
 		})
 	);
 };
-
 const data = [
 	{
 		created_at: 1,
@@ -187,12 +187,15 @@ export default function Chat() {
 		return 0;
 	}
 
+	const voiceParse = () => {};
+
 	return (
 		<Layout title="Chat Screen">
 			<style jsx global>{`
 				/* width */
 				.scroll::-webkit-scrollbar {
-					width: 20px;
+					width: 16px;
+					background-color: transparent;
 				}
 
 				/* Track */
@@ -202,11 +205,15 @@ export default function Chat() {
 				}
 
 				.scroll::-webkit-scrollbar-thumb {
-					background: black;
+					background: #d3d3d3;
 					border-radius: 16px;
 				}
 			`}</style>
-			<div className=" bg-white p-5 w-full text-black rounded-2xl">
+
+			<h2 className="text-[50px] font-medium top-0" style={{ fontWeight: 600 }}>
+				Topic selected : {}
+			</h2>
+			<div className=" bg-white p-4 w-full text-black rounded-2xl">
 				<div className="scroll flex flex-col-reverse overflow-y-scroll h-[400px]">
 					{data.sort(compare).map((item) => {
 						return (
@@ -226,7 +233,7 @@ export default function Chat() {
 				</div>
 				<div
 					id="input"
-					className="rounded-2xl bg-darkerYellow p-5 bottom-0 mt-5 h-24 flex flex-row space-x-4 items-center"
+					className="rounded-2xl bg-secondary2 p-5 bottom-0 mt-5 h-24 flex flex-row space-x-3 space-y-1 items-center"
 				>
 					<form onSubmit={handleSubmit} className="h-full w-full">
 						<input
@@ -236,14 +243,12 @@ export default function Chat() {
 							className="w-full h-full rounded-2xl text-2xl p-5 bg-white focus:outline-none"
 						/>
 					</form>
-					<form onSubmit={handleSubmit} className="h-full w-24">
-						<input
-							type="text"
-							name=""
-							id=""
-							className="w-full h-full rounded-full text-2xl p-5 bg-white focus:outline-none"
-						/>
-					</form>
+					<button
+						onClick={voiceParse}
+						className="rounded-full bg-primary text-4xl p-4 text-white"
+					>
+						<MdMic />
+					</button>
 				</div>
 			</div>
 		</Layout>
