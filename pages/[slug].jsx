@@ -1,7 +1,8 @@
 import Layout from "../components/Layout";
 import { useEffect, useState } from "react";
 import { MdMic } from "react-icons/md";
-import dummyChat from "../data/dummy-chat";
+import DummyChat from "../data/dummy-chat.json";
+import { FaRobot } from "react-icons/fa";
 const sendData = (ws, data) => {
 	ws.send(
 		JSON.stringify({
@@ -181,7 +182,17 @@ export default function Chat() {
 		if (a.created_at > b.created_at) {
 			return -1;
 		}
-		if (a.created_at > b.created_at) {
+		if (a.created_at < b.created_at) {
+			return 1;
+		}
+		return 0;
+	}
+
+	function compareID(firstID, secondID) {
+		if (firstID.id > secondID.id) {
+			return -1;
+		}
+		if (firstID.id < secondID.id) {
 			return 1;
 		}
 		return 0;
@@ -215,18 +226,25 @@ export default function Chat() {
 			</h2>
 			<div className=" bg-white p-4 w-full text-black rounded-2xl">
 				<div className="scroll flex flex-col-reverse overflow-y-scroll h-[400px]">
-					{data.sort(compare).map((item) => {
+					{DummyChat.sort(compareID).map((item) => {
 						return (
 							<div
-								key={item.user_id}
-								className={`rounded-2xl py-1 px-5 mb-1 ${
-									item.user_id === 1
-										? "bg-blue-300 self-start"
-										: "bg-red-500 self-end"
+								key={item.id}
+								class={`chat px-4 ${
+									item.role === "ROBOT" ? "chat-start" : "chat-end"
 								}`}
 							>
-								<div>{item.name}</div>
-								<div>{item.text}</div>
+								<div class="chat-image avatar">
+									<div class="w-16 rounded-full">
+										<img src="https://placeimg.com/192/192/people" />
+									</div>
+								</div>
+								<div class="chat-header text-lg">
+									{item.name}
+									<time class="text-base opacity-50 px-2">12:45</time>
+								</div>
+								<div class="chat-bubble text-2xl">{item.message}</div>
+								<div class="chat-footer opacity-50">Delivered</div>
 							</div>
 						);
 					})}
