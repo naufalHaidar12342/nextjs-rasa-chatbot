@@ -236,7 +236,13 @@ export default function Chat() {
 							>
 								<div class="chat-image avatar">
 									<div class="w-16 rounded-full">
-										<img src="https://placeimg.com/192/192/people" />
+										<img
+											src={`${
+												item.role === "ROBOT"
+													? "/images/student.png"
+													: "/images/student-raise-hand.png"
+											}`}
+										/>
 									</div>
 								</div>
 								<div class="chat-header text-lg">
