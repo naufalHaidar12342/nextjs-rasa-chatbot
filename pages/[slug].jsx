@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { MdMic } from "react-icons/md";
 import DummyChat from "../data/dummy-chat.json";
 import { FaRobot } from "react-icons/fa";
+import Image from "next/image";
+
 const sendData = (ws, data) => {
 	ws.send(
 		JSON.stringify({
@@ -220,10 +222,14 @@ export default function Chat() {
 					border-radius: 16px;
 				}
 			`}</style>
-
-			<h2 className="text-[50px] font-medium" style={{ fontWeight: 600 }}>
-				Topic selected : {}
-			</h2>
+			<div className="flex flex-col">
+				<h2 className="text-[50px] font-medium" style={{ fontWeight: 600 }}>
+					Topic selected : {}
+				</h2>
+				<button className="rounded-2xl bg-yellow-600 my-2 text-[40px]">
+					Back
+				</button>
+			</div>
 			<div className=" bg-white p-4 w-full text-black rounded-2xl">
 				<div className="scroll flex flex-col-reverse overflow-y-scroll h-[400px]">
 					{DummyChat.sort(compareID).map((item) => {
@@ -236,12 +242,15 @@ export default function Chat() {
 							>
 								<div className="chat-image avatar">
 									<div className="w-16 rounded-full">
-										<img
+										<Image
 											src={`${
 												item.role === "ROBOT"
 													? "/images/student.png"
 													: "/images/student-raise-hand.png"
 											}`}
+											width={64}
+											height={64}
+											placeholder={`/vercel.svg`}
 										/>
 									</div>
 								</div>
