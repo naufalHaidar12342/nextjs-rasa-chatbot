@@ -249,7 +249,15 @@ export default function Chat() {
 									{item.name}
 									<time class="text-base opacity-50 px-2">12:45</time>
 								</div>
-								<div class="chat-bubble text-2xl">{item.message}</div>
+								<div
+									class={`chat-bubble text-2xl ${
+										item.role === "ROBOT"
+											? "chat-bubble-primary"
+											: "chat-bubble-info"
+									}`}
+								>
+									{item.message}
+								</div>
 								<div class="chat-footer opacity-50">Delivered</div>
 							</div>
 						);
