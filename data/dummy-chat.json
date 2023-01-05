@@ -1,0 +1,32 @@
+[
+	{
+		"id": 1,
+		"role": "ROBOT",
+		"name": "Chatbot",
+		"message": "Halo! 👋"
+	},
+	{
+		"id": 2,
+		"role": "ROBOT",
+		"name": "Chatbot",
+		"message": "🤖 Aku adalah chatbot pendamping belajar."
+	},
+	{
+		"id": 3,
+		"role": "ROBOT",
+		"name": "Chatbot",
+		"message": "Mau belajar apa hari ini?"
+	},
+	{
+		"id": 4,
+		"role": "STUDENT",
+		"name": "Student",
+		"message": "Kasih tahu seputar geografi, dong!"
+	},
+	{
+		"id": 5,
+		"role": "STUDENT",
+		"name": "Student",
+		"message": "Kontur itu maksudnya gimana sih?"
+	}
+]
