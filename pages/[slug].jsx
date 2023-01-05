@@ -230,12 +230,12 @@ export default function Chat() {
 						return (
 							<div
 								key={item.id}
-								class={`chat px-4 ${
+								className={`chat px-4 ${
 									item.role === "ROBOT" ? "chat-start" : "chat-end"
 								}`}
 							>
-								<div class="chat-image avatar">
-									<div class="w-16 rounded-full">
+								<div className="chat-image avatar">
+									<div className="w-16 rounded-full">
 										<img
 											src={`${
 												item.role === "ROBOT"
@@ -245,12 +245,12 @@ export default function Chat() {
 										/>
 									</div>
 								</div>
-								<div class="chat-header text-lg">
+								<div className="chat-header text-lg">
 									{item.name}
-									<time class="text-base opacity-50 px-2">12:45</time>
+									<time className="text-base opacity-50 px-2">12:45</time>
 								</div>
 								<div
-									class={`chat-bubble text-2xl ${
+									className={`chat-bubble text-2xl ${
 										item.role === "ROBOT"
 											? "chat-bubble-primary"
 											: "chat-bubble-info"
@@ -258,7 +258,7 @@ export default function Chat() {
 								>
 									{item.message}
 								</div>
-								<div class="chat-footer opacity-50">Delivered</div>
+								<div className="chat-footer opacity-50">Delivered</div>
 							</div>
 						);
 					})}
