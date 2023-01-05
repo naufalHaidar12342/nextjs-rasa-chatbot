@@ -221,7 +221,7 @@ export default function Chat() {
 				}
 			`}</style>
 
-			<h2 className="text-[50px] font-medium top-0" style={{ fontWeight: 600 }}>
+			<h2 className="text-[50px] font-medium" style={{ fontWeight: 600 }}>
 				Topic selected : {}
 			</h2>
 			<div className=" bg-white p-4 w-full text-black rounded-2xl">
