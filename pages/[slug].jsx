@@ -4,6 +4,7 @@ import { MdMic } from "react-icons/md";
 import DummyChat from "../data/dummy-chat.json";
 import { FaRobot } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
 
 const sendData = (ws, data) => {
 	ws.send(
@@ -226,9 +227,12 @@ export default function Chat() {
 				<h2 className="text-[50px] font-medium" style={{ fontWeight: 600 }}>
 					Topic selected : {}
 				</h2>
-				<button className="rounded-2xl bg-yellow-600 my-2 text-[40px]">
+				<Link
+					href={"/"}
+					className="rounded-2xl bg-yellow-600 my-2 text-[40px] text-center"
+				>
 					Back
-				</button>
+				</Link>
 			</div>
 			<div className=" bg-white p-4 w-full text-black rounded-2xl">
 				<div className="scroll flex flex-col-reverse overflow-y-scroll h-[400px]">
