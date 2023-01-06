@@ -228,7 +228,11 @@ export default function Chat() {
 				<m.div
 					animate={{ opacity: 1, scale: 1 }}
 					initial={{ opacity: 0, scale: 0.5 }}
-					transition={{ duration: 0.8, delay: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
+					transition={{
+						duration: 0.8,
+						delay: 0.09,
+						ease: [0, 0.71, 0.2, 1.01],
+					}}
 					className="flex flex-col"
 				>
 					<h2 className="text-[50px] font-medium" style={{ fontWeight: 600 }}>
@@ -241,7 +245,7 @@ export default function Chat() {
 						className={"flex flex-col"}
 					>
 						<Link
-							href={"/"}
+							href={"/choose-topic"}
 							className="rounded-2xl bg-yellow-600 my-2 text-[40px] text-center"
 						>
 							Back
