@@ -5,6 +5,7 @@ import DummyChat from "../data/dummy-chat.json";
 import { FaRobot } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import { domAnimation, LazyMotion, m } from "framer-motion";
 
 const sendData = (ws, data) => {
 	ws.send(
@@ -223,17 +224,31 @@ export default function Chat() {
 					border-radius: 16px;
 				}
 			`}</style>
-			<div className="flex flex-col">
-				<h2 className="text-[50px] font-medium" style={{ fontWeight: 600 }}>
-					Topic selected : {}
-				</h2>
-				<Link
-					href={"/"}
-					className="rounded-2xl bg-yellow-600 my-2 text-[40px] text-center"
+			<LazyMotion features={domAnimation}>
+				<m.div
+					animate={{ opacity: 1, scale: 1 }}
+					initial={{ opacity: 0, scale: 0.5 }}
+					transition={{ duration: 0.8, delay: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
+					className="flex flex-col"
 				>
-					Back
-				</Link>
-			</div>
+					<h2 className="text-[50px] font-medium" style={{ fontWeight: 600 }}>
+						Topic selected : {}
+					</h2>
+					<m.div
+						style={{ fontWeight: 500 }}
+						whileHover={{ scale: 1.2 }}
+						whileTap={{ scale: 0.75 }}
+						className={"flex flex-col"}
+					>
+						<Link
+							href={"/"}
+							className="rounded-2xl bg-yellow-600 my-2 text-[40px] text-center"
+						>
+							Back
+						</Link>
+					</m.div>
+				</m.div>
+			</LazyMotion>
 			<div className=" bg-white p-4 w-full text-black rounded-2xl">
 				<div className="scroll flex flex-col-reverse overflow-y-scroll h-[400px]">
 					{DummyChat.sort(compareID).map((item) => {
@@ -288,12 +303,20 @@ export default function Chat() {
 							className="w-full h-full rounded-2xl text-2xl p-5 bg-white focus:outline-none"
 						/>
 					</form>
-					<button
-						onClick={voiceParse}
-						className="rounded-full bg-primary text-4xl p-4 text-white"
-					>
-						<MdMic />
-					</button>
+					<LazyMotion features={domAnimation}>
+						<m.button
+							whileTap={{ scale: 0.7 }}
+							whileHover={{ scale: 0.9 }}
+							transition={{
+								type: "spring",
+								bounce: 0.7,
+							}}
+							className={"rounded-full bg-primary text-4xl p-4 text-white"}
+							onClick={voiceParse}
+						>
+							<MdMic />
+						</m.button>
+					</LazyMotion>
 				</div>
 			</div>
 		</Layout>
