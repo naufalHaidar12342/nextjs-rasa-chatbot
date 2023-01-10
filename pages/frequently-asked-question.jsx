@@ -1,5 +1,7 @@
 import Layout from "../components/Layout";
 import { MdOutlineQuestionAnswer } from "react-icons/md";
+import { motion } from "framer-motion";
+
 export default function FAQ() {
 	return (
 		<Layout title="Frequently Asked Question">
@@ -26,21 +28,38 @@ export default function FAQ() {
 					border-radius: 16px;
 				}
 			`}</style>
-			<div className="flex flex-row items-center">
+			<motion.div
+				className="flex flex-row items-center"
+				animate={{ opacity: 1, scale: 1 }}
+				initial={{ opacity: 0, scale: 0.5 }}
+				transition={{
+					duration: 0.8,
+					delay: 0.5,
+					ease: [0, 0.71, 0.2, 1.01],
+				}}
+			>
 				<MdOutlineQuestionAnswer className="text-[50px] font-semibold mx-2" />
 				<h2 className="text-[50px] font-semibold linear-gradient-text">
 					Frequently Asked Questions
 				</h2>
-			</div>
-			<div
-				tabindex="0"
-				className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box"
-			>
-				<div className="collapse-title text-xl font-medium">
-					Focus me to see content
-				</div>
-				<div className="collapse-content">
-					<p>tabindex="0" attribute is necessary to make the div focusable</p>
+			</motion.div>
+			<div className="p-4 w-full rounded-2xl">
+				<div className="scroll overflow-y-scroll h-96 flex flex-col ">
+					<div className="p-6 flex flex-col justify-evenly">
+						<div
+							tabindex="0"
+							className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-5"
+						>
+							<div className="collapse-title text-xl font-medium">
+								Focus me to see content
+							</div>
+							<div className="collapse-content">
+								<p>
+									tabindex="0" attribute is necessary to make the div focusable
+								</p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</Layout>

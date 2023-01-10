@@ -290,7 +290,6 @@ export default function Chat() {
 								>
 									{item.message}
 								</div>
-								<div className="chat-footer opacity-50">Delivered</div>
 							</div>
 						);
 					})}
