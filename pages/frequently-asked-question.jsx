@@ -1,6 +1,8 @@
 import Layout from "../components/Layout";
 import { MdOutlineQuestionAnswer } from "react-icons/md";
-import { motion } from "framer-motion";
+import { domAnimation, LazyMotion, m, motion } from "framer-motion";
+import FAQList from "../components/FAQList";
+import Link from "next/link";
 
 export default function FAQ() {
 	return (
@@ -29,7 +31,7 @@ export default function FAQ() {
 				}
 			`}</style>
 			<motion.div
-				className="flex flex-row items-center"
+				className="flex flex-col items-center"
 				animate={{ opacity: 1, scale: 1 }}
 				initial={{ opacity: 0, scale: 0.5 }}
 				transition={{
@@ -38,27 +40,32 @@ export default function FAQ() {
 					ease: [0, 0.71, 0.2, 1.01],
 				}}
 			>
-				<MdOutlineQuestionAnswer className="text-[50px] font-semibold mx-2" />
-				<h2 className="text-[50px] font-semibold linear-gradient-text">
-					Frequently Asked Questions
-				</h2>
+				<div className="flex flex-row items-center">
+					<MdOutlineQuestionAnswer className="text-[50px] font-semibold mx-2" />
+					<h2 className="text-[50px] font-semibold linear-gradient-text">
+						Frequently Asked Questions
+					</h2>
+				</div>
+				<LazyMotion features={domAnimation}>
+					<m.div
+						style={{ fontWeight: 500 }}
+						whileHover={{ scale: 1.2 }}
+						whileTap={{ scale: 0.75 }}
+					>
+						<Link href={"/help"} className="pt-2">
+							<div className="rounded-2xl w-[700px] h-20 flex justify-center items-center bg-darkerYellow">
+								<h4 className="text-4xl px-4" style={{ fontWeight: 600 }}>
+									Back
+								</h4>
+							</div>
+						</Link>
+					</m.div>
+				</LazyMotion>
 			</motion.div>
 			<div className="p-4 w-full rounded-2xl">
 				<div className="scroll overflow-y-scroll h-96 flex flex-col ">
 					<div className="p-6 flex flex-col justify-evenly">
-						<div
-							tabindex="0"
-							className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-5"
-						>
-							<div className="collapse-title text-xl font-medium">
-								Focus me to see content
-							</div>
-							<div className="collapse-content">
-								<p>
-									tabindex="0" attribute is necessary to make the div focusable
-								</p>
-							</div>
-						</div>
+						<FAQList />
 					</div>
 				</div>
 			</div>
