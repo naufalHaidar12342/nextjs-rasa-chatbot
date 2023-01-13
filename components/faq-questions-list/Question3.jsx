@@ -12,10 +12,12 @@ export default function ThirdQuestion() {
 			<div className="collapse-content text-xl font-medium bg-primary group-focus:bg-white group-focus:text-primary">
 				<p>
 					Langkah-langkah dalam memakai chatbot bisa dilihat pada halaman
-					sebelumnya. Klik tombol bantuan untuk melihat lebih lengkap
-					panduannya.
+					sebelumnya. Klik tombol{" "}
+					<Link href={"/help"} className="rounded-2xl text-2xl bg-white">
+						Bantuan
+					</Link>{" "}
+					untuk melihat lebih lengkap panduannya.
 				</p>
-				<Link href={"/help"}>Bantuan</Link>
 			</div>
 		</div>
 	);

@@ -2,10 +2,8 @@ import Link from "next/link";
 
 export default function SecondQuestion() {
 	return (
-		<div
-			tabindex="0"
-			className="collapse collapse-plus bg-white text-black rounded-box mb-5"
-		>
+		<div className="collapse collapse-plus bg-white text-black rounded-box mb-5">
+			<input type="checkbox" />
 			<div className="collapse-title text-2xl font-medium text-primary">
 				Apakah harus pakai <i>monitor touchscreen</i> untuk menggunakan{" "}
 				<i>chatbot</i> ?
