@@ -4,10 +4,10 @@ export default function FourthQuestion() {
 	return (
 		<div className="collapse collapse-plus rounded-box mb-5">
 			<input type="checkbox" className="peer" />
-			<div className="collapse-title text-2xl bg-primary font-medium peer-checked:bg-white peer-checked:text-primary">
+			<div className="collapse-title text-2xl bg-primary text-white font-semibold peer-checked:bg-white peer-checked:text-primary">
 				Bagaimana cara menggunakan chatbot ini?
 			</div>
-			<div className="collapse-content text-xl bg-primary peer-checked:bg-white peer-checked:text-primary">
+			<div className="collapse-content text-xl bg-primary text-white peer-checked:bg-white peer-checked:text-primary">
 				<p>
 					Langkah-langkah dalam memakai chatbot bisa dilihat pada halaman
 					sebelumnya. Klik tombol

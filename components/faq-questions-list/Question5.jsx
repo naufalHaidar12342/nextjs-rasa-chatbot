@@ -2,21 +2,14 @@ import Link from "next/link";
 
 export default function FifthQuestion() {
 	return (
-		<div
-			tabindex="0"
-			className="collapse collapse-plus  bg-primary rounded-box mb-5"
-		>
-			<div className="collapse-title text-2xl font-medium ">
+		<div className="collapse collapse-plus peer rounded-box mb-5">
+			<div className="collapse-title text-2xl font-semibold bg-primary text-white peer-checked:bg-white peer-checked:text-primary ">
 				Bagaimana cara menggunakan chatbot ini?
 			</div>
-			<div className="collapse-content  text-xl">
+			<div className="collapse-content text-xl bg-primary text-white peer-checked:bg-white peer-checked:text-primary">
 				<p>
 					Langkah-langkah dalam memakai chatbot bisa dilihat pada halaman
 					sebelumnya. Klik tombol
-					<Link className="btn mx-2" href={"/help"}>
-						Bantuan
-					</Link>
-					untuk melihat lebih lengkap panduannya.
 				</p>
 			</div>
 		</div>
