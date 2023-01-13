@@ -246,7 +246,7 @@ export default function Chat() {
 					>
 						<Link
 							href={"/choose-topic"}
-							className="rounded-2xl bg-yellow-600 my-2 text-[40px] text-center"
+							className="rounded-2xl bg-yellow-600 mb-3 text-[40px] text-center"
 						>
 							Back
 						</Link>
