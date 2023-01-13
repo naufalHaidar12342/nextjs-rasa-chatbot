@@ -2,14 +2,12 @@ import Link from "next/link";
 
 export default function FourthQuestion() {
 	return (
-		<div
-			tabindex="0"
-			className="collapse collapse-plus  bg-primary rounded-box mb-5"
-		>
-			<div className="collapse-title text-2xl font-medium ">
+		<div className="collapse collapse-plus rounded-box mb-5">
+			<input type="checkbox" className="peer" />
+			<div className="collapse-title text-2xl bg-primary font-medium peer-checked:bg-white peer-checked:text-primary">
 				Bagaimana cara menggunakan chatbot ini?
 			</div>
-			<div className="collapse-content  text-xl">
+			<div className="collapse-content text-xl bg-primary peer-checked:bg-white peer-checked:text-primary">
 				<p>
 					Langkah-langkah dalam memakai chatbot bisa dilihat pada halaman
 					sebelumnya. Klik tombol

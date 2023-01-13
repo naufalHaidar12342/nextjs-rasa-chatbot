@@ -1,24 +1,34 @@
+import { domAnimation, LazyMotion, m } from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/router";
+
 export default function FirstQuestion() {
-	const routerBack = useRouter();
 	return (
-		<div tabindex="0" className="group collapse collapse-plus rounded-box mb-5">
-			<div className="collapse-title text-2xl font-semibold bg-primary group-focus:bg-white group-focus:text-primary">
+		<div className="collapse collapse-plus rounded-box mb-5">
+			<input type="checkbox" className="peer" />
+			<div className="collapse-title text-2xl text-white font-semibold bg-primary peer-checked:bg-white peer-checked:text-primary">
 				Bagaimana cara menggunakan chatbot ini?
 			</div>
-			<div className="collapse-content text-xl font-medium  bg-primary group-focus:bg-white group-focus:text-primary">
+			<div className="collapse-content text-xl font-medium  bg-primary peer-checked:bg-white peer-checked:text-primary">
 				<p>
 					Langkah-langkah dalam memakai chatbot bisa dilihat pada halaman
-					sebelumnya. Klik tombol
-					<span
-						onClick={() => routerBack.push("/help")}
-						className="mx-2 btn hover:bg-primary bg-primary text-xl font-medium text-white hover:text-white"
-						style={{ textTransform: "none" }}
-					>
-						Bantuan
-					</span>
+					sebelumnya. Klik tombol di bawah ini untuk melihat panduan dalam
+					menggunakan <i>chatbot</i>.
 				</p>
+				<LazyMotion features={domAnimation}>
+					<m.div
+						className="flex flex-col items-start"
+						style={{ fontWeight: 500 }}
+						whileHover={{ scale: 1.0 }}
+						whileTap={{ scale: 0.9 }}
+					>
+						<Link
+							href={"/help"}
+							className="rounded-2xl bg-primary text-white p-3"
+						>
+							Bantuan
+						</Link>
+					</m.div>
+				</LazyMotion>
 			</div>
 		</div>
 	);
