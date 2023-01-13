@@ -53,7 +53,7 @@ export default function FAQ() {
 						whileTap={{ scale: 0.75 }}
 					>
 						<Link href={"/help"} className="pt-2">
-							<div className="rounded-2xl w-[700px] h-20 flex justify-center items-center bg-darkerYellow">
+							<div className="rounded-2xl w-[700px] h-16 flex justify-center items-center bg-darkerYellow">
 								<h4 className="text-4xl px-4" style={{ fontWeight: 600 }}>
 									Back
 								</h4>

@@ -1,4 +1,4 @@
-import { domAnimation, LazyMotion, m } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function FirstQuestion() {
@@ -14,21 +14,19 @@ export default function FirstQuestion() {
 					sebelumnya. Klik tombol di bawah ini untuk melihat panduan dalam
 					menggunakan <i>chatbot</i>.
 				</p>
-				<LazyMotion features={domAnimation}>
-					<m.div
-						className="flex flex-col items-start"
-						style={{ fontWeight: 500 }}
-						whileHover={{ scale: 1.0 }}
-						whileTap={{ scale: 0.9 }}
+				<motion.div
+					className="flex flex-col items-start "
+					style={{ fontWeight: 500 }}
+					whileHover={{ scale: 1.0 }}
+					whileTap={{ scale: 0.9 }}
+				>
+					<Link
+						href={"/help"}
+						className="rounded-2xl bg-primary text-white p-3"
 					>
-						<Link
-							href={"/help"}
-							className="rounded-2xl bg-primary text-white p-3"
-						>
-							Bantuan
-						</Link>
-					</m.div>
-				</LazyMotion>
+						Bantuan
+					</Link>
+				</motion.div>
 			</div>
 		</div>
 	);
