@@ -36,3 +36,13 @@ a {
 		background: black;
 	}
 }
+@media (prefers-color-scheme: light) {
+	html {
+		color-scheme: light;
+		font-family: "Poppins", sans-serif;
+	}
+	body {
+		color: white;
+		background: black;
+	}
+} ;
