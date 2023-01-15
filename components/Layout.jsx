@@ -11,7 +11,7 @@ export default function Layout({ children, title = "" }) {
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
-			<main className="relative px-[156px] py-[84px] max-h-screen h-screen overflow-auto">
+			<main className="relative px-[156px] py-[84px] min-h-screen ">
 				<BlurLayer>
 					{children}
 					<motion.div
@@ -28,10 +28,10 @@ export default function Layout({ children, title = "" }) {
 					</motion.div>
 				</BlurLayer>
 				<Image
-					src="/images/background.svg"
+					src="/images/chatbot-background-vXV1z5J8N-transformed.png"
 					style={{ objectFit: "cover" }}
 					fill
-					className="fixed z-0 left-0 top-0 h-screen"
+					className="fixed z-0 left-0 top-0  "
 				/>
 			</main>
 		</div>
