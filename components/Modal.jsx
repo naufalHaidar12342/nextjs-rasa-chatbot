@@ -1,4 +1,4 @@
-export default function Modal() {
+export default function Modal({ children }) {
 	return (
 		<div>
 			{/* The button to open modal */}

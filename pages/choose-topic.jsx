@@ -20,7 +20,7 @@ export default function ChooseTopic() {
 				transition={{ duration: 0.8, delay: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
 			>
 				<h2
-					className="text-[50px] font-medium linear-gradient-text"
+					className="text-[50px] font-medium linear-gradient-text text-center"
 					style={{ fontWeight: 600 }}
 				>
 					Which topic do you want to learn today?
@@ -36,13 +36,13 @@ export default function ChooseTopic() {
 								<Link
 									href={`${topics.path}`}
 									key={index}
-									className="rounded-2xl w-[700px] h-28 p-5 flex justify-center items-center"
+									className="rounded-2xl w-[700px] h-40 p-5 flex justify-center items-center"
 									style={{
 										background: "rgba(255, 255, 255, 0.55)",
 									}}
 								>
 									<div
-										className="text-6xl"
+										className="text-6xl text-center leading-tight"
 										style={{
 											WebkitTextFillColor: "#012363",
 											fontWeight: 500,

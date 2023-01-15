@@ -1,7 +1,7 @@
 export default function Footer() {
 	return (
-		<div className="text-2xl pt-12 bottom-0">
+		<footer className="text-2xl pt-12 bottom-0 font-medium">
 			<h4>2022. Tim Chatbot Pendamping Belajar</h4>
-		</div>
+		</footer>
 	);
 }

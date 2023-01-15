@@ -1,14 +1,6 @@
 [
 	{
-		"topicName": "Geography",
+		"topicName": "Technology & Information",
 		"path": "/topic-geography"
-	},
-	{
-		"topicName": "Math",
-		"path": "/topic-math"
-	},
-	{
-		"topicName": "Physics",
-		"path": "/topic-physics"
 	}
 ]
