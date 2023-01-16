@@ -1,24 +1,24 @@
-export default function Modal({ children }) {
-	return (
-		<div>
-			{/* The button to open modal */}
-			<label htmlFor="my-modal-4" className="btn">
-				open modal
-			</label>
+import Image from "next/image";
 
-			{/* Put this part before </body> tag */}
-			<input type="checkbox" id="my-modal-4" className="modal-toggle" />
-			<label htmlFor="my-modal-4" className="modal cursor-pointer">
-				<label className="modal-box relative" htmlFor="">
-					<h3 className="text-lg font-bold">
-						Congratulations random Internet user!
-					</h3>
-					<p className="py-4">
-						You've been selected for a chance to get one year of subscription to
-						use Wikipedia for free!
-					</p>
-				</label>
-			</label>
+export default function Modal({ children }) {
+	let modal = document.getElementById("modal");
+	let modalImage = document.getElementById("modal-img");
+	const showImageAsModal = (imageSrc) => {
+		modal.classList.remove("hidden");
+		modalImage = 2;
+	};
+	const closeModal = () => {
+		modal.classList.add("hidden");
+	};
+	return (
+		<div
+			id="modal"
+			className="hidden fixed top-0 left-0 z-50 w-screen h-screen bg-black/70 flex justify-center items-center"
+		>
+			<a
+				className="fixed z-[90] top-6 right-8 text-white text-5xl font-bold"
+				href="javascript:void(0)"
+			></a>
 		</div>
 	);
 }

@@ -36,23 +36,14 @@ export default function Help() {
 				initial={{ opacity: 0, scale: 0.5 }}
 				transition={{ duration: 0.8, delay: 0.5, ease: [0, 0.71, 0.2, 1.01] }}
 			>
-				<h2
-					className="text-[50px] font-medium linear-gradient-text"
-					style={{ fontWeight: 600 }}
-				>
+				<h2 className="text-[50px] font-semibold linear-gradient-text">
 					What kind of help you need?
 				</h2>
-				<motion.div
-					style={{ fontWeight: 500 }}
-					whileHover={{ scale: 1.1 }}
-					whileTap={{ scale: 0.75 }}
-				>
+				<motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.75 }}>
 					<Link href={"/frequently-asked-question"} className="pt-2">
 						<div className="rounded-2xl w-[700px] h-20 flex justify-center items-center bg-darkerYellow">
 							<FaQuestionCircle className="text-4xl" />
-							<h4 className="text-4xl px-4" style={{ fontWeight: 600 }}>
-								FAQ
-							</h4>
+							<h4 className="text-4xl px-4 font-semibold">FAQ</h4>
 						</div>
 					</Link>
 				</motion.div>
@@ -60,9 +51,7 @@ export default function Help() {
 			<div className="p-4 w-full rounded-2xl">
 				<div className="scroll overflow-y-scroll h-96 flex flex-col">
 					<div className="p-6 flex flex-col justify-evenly">
-						<div className="text-2xl">
-							<Modal />
-						</div>
+						<div id="user-guide-part"></div>
 					</div>
 				</div>
 			</div>

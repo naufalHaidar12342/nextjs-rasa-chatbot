@@ -233,24 +233,11 @@ export default function Chat() {
 						delay: 0.09,
 						ease: [0, 0.71, 0.2, 1.01],
 					}}
-					className="flex flex-col"
+					className="flex"
 				>
-					<h2 className="text-[50px] font-medium" style={{ fontWeight: 600 }}>
+					<h2 className="text-[50px] font-semibold text-center">
 						Topic selected : {}
 					</h2>
-					<m.div
-						style={{ fontWeight: 500 }}
-						whileHover={{ scale: 1.2 }}
-						whileTap={{ scale: 0.75 }}
-						className={"flex flex-col"}
-					>
-						<Link
-							href={"/choose-topic"}
-							className="rounded-2xl bg-yellow-600 mb-3 text-[40px] text-center"
-						>
-							Back
-						</Link>
-					</m.div>
 				</m.div>
 			</LazyMotion>
 			<div className=" bg-white p-4 w-full text-black rounded-2xl">
@@ -322,6 +309,21 @@ export default function Chat() {
 					</LazyMotion>
 				</div>
 			</div>
+			<LazyMotion features={domAnimation}>
+				<m.div
+					style={{ fontWeight: 500 }}
+					whileHover={{ scale: 1.2 }}
+					whileTap={{ scale: 0.75 }}
+					className="pt-5"
+				>
+					<Link
+						href={"/choose-topic"}
+						className="pt-2 rounded-2xl w-[700px] h-20 flex justify-center items-center bg-darkerYellow"
+					>
+						<h4 className="text-4xl px-4 font-semibold">Change Topic</h4>
+					</Link>
+				</m.div>
+			</LazyMotion>
 		</Layout>
 	);
 }

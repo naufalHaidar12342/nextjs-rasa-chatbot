@@ -9,7 +9,7 @@
 		"id": 2,
 		"role": "ROBOT",
 		"name": "Chatbot",
-		"message": "🤖 Aku adalah chatbot pendamping belajar."
+		"message": "Kenalin, namaku Cipa! Aku adalah chatbot pendamping belajar."
 	},
 	{
 		"id": 3,
@@ -22,12 +22,6 @@
 		"role": "STUDENT",
 		"name": "Student",
 		"message": "Kasih tahu seputar geografi, dong!"
-	},
-	{
-		"id": 5,
-		"role": "STUDENT",
-		"name": "Student",
-		"message": "Kontur itu maksudnya gimana sih?"
 	},
 	{
 		"id": 5,
