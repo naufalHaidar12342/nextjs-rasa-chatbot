@@ -6,13 +6,6 @@ import { MdOutlineKeyboardBackspace } from "react-icons/md";
 export default function ChooseTopic() {
 	return (
 		<Layout title="Choose topic">
-			<style jsx>{`
-				.linear-gradient-text {
-					background: linear-gradient(-90deg, #c8940f 20%, #ffffff 59.92%);
-					-webkit-background-clip: text;
-					-webkit-text-fill-color: transparent;
-				}
-			`}</style>
 			<motion.div
 				className="flex flex-col items-center"
 				animate={{ opacity: 1, scale: 1 }}
