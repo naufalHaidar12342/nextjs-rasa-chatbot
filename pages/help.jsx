@@ -3,6 +3,7 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 import { FaQuestionCircle } from "react-icons/fa";
 import Modal from "../components/Modal";
+import StartingConversation from "../components/chatbot-tutorials/chatting-guide/StartingConversation";
 
 export default function Help() {
 	return (
@@ -44,9 +45,11 @@ export default function Help() {
 				</motion.div>
 			</motion.div>
 			<div className="p-4 w-full rounded-2xl">
-				<div className="scroll overflow-y-scroll h-96 flex flex-col">
+				<div className="scroll overflow-y-scroll h-[600px] flex flex-col">
 					<div className="p-6 flex flex-col justify-evenly">
-						<div id="user-guide-part"></div>
+						<StartingConversation />
+						<StartingConversation />
+						<StartingConversation />
 					</div>
 				</div>
 			</div>
