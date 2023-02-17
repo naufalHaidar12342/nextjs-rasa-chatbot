@@ -36,7 +36,6 @@ export default function FAQ() {
 				}}
 			>
 				<div className="flex flex-row items-center">
-					<MdOutlineQuestionAnswer className="text-[50px] font-semibold mx-2" />
 					<h2 className="text-[50px] font-semibold linear-gradient-text">
 						Frequently Asked Questions
 					</h2>
