@@ -17,8 +17,8 @@ export default async function handler(req, res) {
 				},
 			})
 			.then(() => {
-				return res.status(201).json({ message: "success" });
 				console.log("problem successfully sent");
+				return res.status(201).json({ message: "success" });
 			})
 			.catch((error) => {
 				console.log(error.response.body.errors);
