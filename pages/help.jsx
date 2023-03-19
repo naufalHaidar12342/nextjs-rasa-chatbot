@@ -2,8 +2,6 @@ import { domAnimation, LazyMotion, m, motion } from "framer-motion";
 import Link from "next/link";
 import Layout from "../components/Layout";
 import { FaQuestionCircle } from "react-icons/fa";
-import Modal from "../components/Modal";
-import StartingConversation from "../components/chatbot-tutorials/chatting-guide/StartingConversation";
 
 export default function Help() {
 	return (
@@ -45,11 +43,11 @@ export default function Help() {
 				</motion.div>
 			</motion.div>
 			<div className="p-4 w-full rounded-2xl">
-				<div className="scroll overflow-y-scroll h-[600px] flex flex-col">
-					<div className="p-6 flex flex-col justify-evenly">
-						<StartingConversation />
-						<StartingConversation />
-						<StartingConversation />
+				<div className="scroll overflow-y-scroll h-[200px] flex flex-col">
+					<div className="p-6 flex flex-col items-center">
+						<h2>Contact:</h2>
+						<h3>Tim Chatbot Pendamping Guru (A/n Haidar)</h3>
+						<h3>085156967023</h3>
 					</div>
 				</div>
 			</div>

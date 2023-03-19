@@ -3,13 +3,17 @@ import Head from "next/head";
 import Image from "next/image";
 import Footer from "./Footer";
 import BlurLayer from "./BlurLayer";
-export default function Layout({ children, title = "" }) {
+export default function Layout({
+	children,
+	title = "Chatbot Pendamping Guru",
+}) {
 	return (
 		<div>
 			<Head>
 				<title>{title}</title>
-				<meta charSet="utf-8" />
+				<meta charSet="utf-8" lang="en" />
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+				<meta name="description" content="Chatbot pendamping guru" />
 			</Head>
 			<main className="relative px-[156px] py-[84px] min-h-screen">
 				<BlurLayer>
@@ -31,7 +35,8 @@ export default function Layout({ children, title = "" }) {
 					src="/images/chatbot-background-vXV1z5J8N-transformed.png"
 					style={{ objectFit: "cover" }}
 					fill
-					className="fixed z-0 left-0 top-0  "
+					className="fixed z-0 left-0 top-0"
+					alt="Background of Chatbot Pendamping Guru"
 				/>
 			</main>
 		</div>

@@ -1,8 +1,7 @@
 import { domAnimation, LazyMotion, m, motion } from "framer-motion";
 import Link from "next/link";
 import Layout from "../components/Layout";
-import TopicsList from "../data/list-of-topics.json";
-import { MdOutlineKeyboardBackspace } from "react-icons/md";
+
 export default function ChooseTopic() {
 	return (
 		<Layout title="Choose topic">
@@ -19,34 +18,29 @@ export default function ChooseTopic() {
 					Which topic do you want to learn today?
 				</h2>
 				<div className="flex flex-col justify-center items-center space-y-5 pt-6">
-					{TopicsList.map((topics, index) => (
-						<LazyMotion features={domAnimation} key={index}>
-							<m.div
-								whileHover={{ scale: 1.2 }}
-								whileTap={{}}
-								transition={{ type: "spring" }}
+					<LazyMotion features={domAnimation} key={index}>
+						<m.div whileHover={{ scale: 1.2 }} transition={{ type: "spring" }}>
+							<Link
+								href={`/topic-technology-information`}
+								key={index}
+								className="rounded-2xl w-[700px] h-40 p-5 flex justify-center items-center"
+								style={{
+									background: "rgba(255, 255, 255, 0.55)",
+								}}
 							>
-								<Link
-									href={`${topics.path}`}
-									key={index}
-									className="rounded-2xl w-[700px] h-40 p-5 flex justify-center items-center"
+								<div
+									className="text-6xl text-center leading-tight"
 									style={{
-										background: "rgba(255, 255, 255, 0.55)",
+										WebkitTextFillColor: "#012363",
+										fontWeight: 500,
 									}}
 								>
-									<div
-										className="text-6xl text-center leading-tight"
-										style={{
-											WebkitTextFillColor: "#012363",
-											fontWeight: 500,
-										}}
-									>
-										{topics.topicName}
-									</div>
-								</Link>
-							</m.div>
-						</LazyMotion>
-					))}
+									Information&nbsp;Technology
+								</div>
+							</Link>
+						</m.div>
+					</LazyMotion>
+
 					<LazyMotion features={domAnimation}>
 						<m.div
 							className="pt-5"

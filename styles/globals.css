@@ -1,5 +1,3 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"); */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,14 +6,10 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: "Poppins", sans-serif;
+	font-family: "Poppins", sans-serif, -apple-system, BlinkMacSystemFont,
+		Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+		Helvetica Neue;
 }
-/* body {
-	padding: 0;
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-} */
 
 a {
 	color: inherit;
@@ -49,6 +43,7 @@ a {
 @layer utilities {
 	.linear-gradient-text {
 		background: linear-gradient(-90deg, #c8940f 20%, #ffffff 59.92%);
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}

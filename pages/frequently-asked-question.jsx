@@ -1,10 +1,10 @@
 import Layout from "../components/Layout";
-import { MdOutlineQuestionAnswer } from "react-icons/md";
 import { domAnimation, LazyMotion, m, motion } from "framer-motion";
-import FAQList from "../components/FAQList";
 import Link from "next/link";
+import { GraphQLClient } from "graphql-request";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
-export default function FAQ() {
+export default function FAQ({ separateContents }) {
 	return (
 		<Layout title="Frequently Asked Question">
 			<style jsx>{`
@@ -59,10 +59,56 @@ export default function FAQ() {
 			<div className="p-4 w-full rounded-2xl">
 				<div className="scroll overflow-y-scroll h-96 flex flex-col ">
 					<div className="p-6 flex flex-col justify-evenly">
-						<FAQList />
+						<LazyMotion features={domAnimation}>
+							<m.div
+								animate={{ opacity: 1, scale: 1 }}
+								initial={{ opacity: 0, scale: 0.5 }}
+								transition={{
+									duration: 0.8,
+									delay: 0.5,
+									ease: [0, 0.71, 0.2, 1.01],
+								}}
+							>
+								{separateContents.map((content, key) => (
+									<div
+										className="collapse collapse-plus rounded-box mb-5"
+										key={key}
+									>
+										<input type="checkbox" className="peer" />
+										<div className="collapse-title text-2xl text-white font-semibold bg-primary peer-checked:bg-white peer-checked:text-primary">
+											{content.contentTitle}
+										</div>
+										<div className="collapse-content text-xl font-medium  bg-primary peer-checked:bg-white peer-checked:text-primary">
+											<ReactMarkdown>
+												{content.contentBody.markdown}
+											</ReactMarkdown>
+										</div>
+									</div>
+								))}
+							</m.div>
+						</LazyMotion>
 					</div>
 				</div>
 			</div>
 		</Layout>
 	);
+}
+
+export async function getStaticProps() {
+	const API =
+		"https://us-west-2.cdn.hygraph.com/content/clfdn5vou0vsn01uk8vgd13f4/master";
+	const client = new GraphQLClient(API);
+	const { separateContents } = await client.request(`{
+		separateContents(where: {contentCategory: FAQ}){
+			contentTitle
+			contentBody{
+				markdown
+			}
+		}
+	}`);
+	return {
+		props: {
+			separateContents,
+		},
+	};
 }

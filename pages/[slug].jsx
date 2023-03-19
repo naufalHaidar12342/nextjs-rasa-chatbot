@@ -144,42 +144,6 @@ const data = [
 ];
 
 export default function Chat() {
-	const ENDPOINT = "ws://";
-	const [ws, setWs] = useState();
-	const [messages, setMessages] = useState(data);
-
-	// // koneksi websocket
-	// useEffect(() => {
-	// 	if (!ws) {
-	// 		// init ws
-	// 		const websocket = new WebSocket("");
-
-	// 		// simpan ws ke state kalo udah konek
-	// 		setWs(websocket);
-	// 	}
-	// }, [ws]);
-
-	// // add eventlistener
-	// useEffect(() => {
-	// 	ws.addEventListener("open", (event) => {
-	// 		sendData(ws, { message: "hello" });
-	// 	});
-	// }, []);
-
-	// useEffect(() => {
-	// 	if (ws) {
-	// 		ws.onmessage = (message) => {
-	// 			const messageData = JSON.parse(message.data);
-
-	// 			if (messageData.type === "new-message") {
-	// 				setMessages([...messages, messageData.message]);
-	// 			}
-	// 		};
-	// 	}
-	// });
-
-	const mydId = 1;
-
 	const handleSubmit = () => {};
 
 	function compare(a, b) {
