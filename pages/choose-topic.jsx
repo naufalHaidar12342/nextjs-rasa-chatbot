@@ -18,11 +18,10 @@ export default function ChooseTopic() {
 					Which topic do you want to learn today?
 				</h2>
 				<div className="flex flex-col justify-center items-center space-y-5 pt-6">
-					<LazyMotion features={domAnimation} key={index}>
+					<LazyMotion features={domAnimation}>
 						<m.div whileHover={{ scale: 1.2 }} transition={{ type: "spring" }}>
 							<Link
 								href={`/topic-technology-information`}
-								key={index}
 								className="rounded-2xl w-[700px] h-40 p-5 flex justify-center items-center"
 								style={{
 									background: "rgba(255, 255, 255, 0.55)",
@@ -39,9 +38,6 @@ export default function ChooseTopic() {
 								</div>
 							</Link>
 						</m.div>
-					</LazyMotion>
-
-					<LazyMotion features={domAnimation}>
 						<m.div
 							className="pt-5"
 							style={{ fontWeight: 500 }}

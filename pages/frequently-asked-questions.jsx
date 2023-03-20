@@ -6,7 +6,7 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 export default function FAQ({ separateContents }) {
 	return (
-		<Layout title="Frequently Asked Question">
+		<Layout title="Frequently Asked Questions">
 			<style jsx>{`
 				/* width */
 				.scroll::-webkit-scrollbar {
