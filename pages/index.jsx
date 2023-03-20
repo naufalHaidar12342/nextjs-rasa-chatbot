@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import { MdQuestionAnswer } from "react-icons/md";
 import { MdReport } from "react-icons/md";
-import { LazyMotion, motion } from "framer-motion";
+import { LazyMotion, motion, m, domAnimation } from "framer-motion";
 import Link from "next/link";
 export default function Home() {
 	return (
